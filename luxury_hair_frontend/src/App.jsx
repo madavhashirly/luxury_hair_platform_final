@@ -8,8 +8,6 @@ import Shipping from "./components/Shipping";
 import Reviews from "./components/Reviews";
 import ServicesPage from "./components/ServicesPage";
 import Checkout from "./components/Checkout";
-import OrderDetails from "./components/OrderDetails";
-import AdminProduct from "./components/AdminProduct";
 
 const App = () => {
   const login = window.localStorage.getItem("isLogin");
@@ -26,9 +24,7 @@ const App = () => {
         <Route path="/login" element={login ? <Home /> : <AuthPage  />} />
         <Route path="/checkout" element={login ? <Checkout /> : <AuthPage />} />
         <Route path="/shipping" element={<Shipping />} />
-        <Route path="/orderdetails" element={<OrderDetails />} />
-        <Route path="/adminproduct" element={<AdminProduct />} />
-      </Routes>
+         </Routes>
     </Router>
   );
 };

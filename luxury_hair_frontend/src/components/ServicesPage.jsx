@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import ServiceButton from "./ServiceButton";
 import BookingForm from "./BookingForm";
@@ -65,37 +66,37 @@ const ServicesPage = () => {
   };
 
   return (
-    <div className="services-page">
-      <Navbar />
-      <div className="content">
-        <h1>Hair Services</h1>
-        <div className="service-buttons">
-          {services.map((service, index) => (
-            <ServiceButton
-              key={index}
-              serviceName={service}
-              onClick={handleServiceClick}
-            />
-          ))}
-        </div>
-        {selectedService && (
-          <BookingForm
-            selectedService={selectedService}
-            onSubmit={handleBookingSubmit}
-          />
-        )}
-        {bookingDetails && (
-          <div className="booking-summary">
-            <h3>Booking Summary</h3>
-            <p>Service: {bookingDetails.service}</p>
-            <p>Date: {bookingDetails.date}</p>
-            <p>Time: {bookingDetails.time}</p>
-            <p>Additional Notes: {bookingDetails.additionalNotes}</p>
-            <p>File: {bookingDetails.file.name}</p>
+      <div className="services-page">
+        <Navbar />
+        <div className="content">
+          <h1>Hair Services</h1>
+          <div className="service-buttons">
+            {services.map((service, index) => (
+                <ServiceButton
+                    key={index}
+                    serviceName={service}
+                    onClick={handleServiceClick}
+                />
+            ))}
           </div>
-        )}
+          {selectedService && (
+              <BookingForm
+                  selectedService={selectedService}
+                  onSubmit={handleBookingSubmit}
+              />
+          )}
+          {bookingDetails && (
+              <div className="booking-summary">
+                <h3>Booking Summary</h3>
+                <p>Service: {bookingDetails.service}</p>
+                <p>Date: {bookingDetails.date}</p>
+                <p>Time: {bookingDetails.time}</p>
+                <p>Additional Notes: {bookingDetails.additionalNotes}</p>
+                <p>File: {bookingDetails.file.name}</p>
+              </div>
+          )}
+        </div>
       </div>
-    </div>
   );
 };
 
