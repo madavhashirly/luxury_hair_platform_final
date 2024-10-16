@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import ServiceButton from './ServiceButton';
 import BookingForm from './BookingForm';
 import { createHairService } from "../services/hairServicesService";
-import './HairServices.css';
+
 
 const services = [
     'Straightening of wigs',
