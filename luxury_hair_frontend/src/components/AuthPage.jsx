@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../assets/AuthPage.css";
@@ -9,11 +9,12 @@ const AuthPage = () => {
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
 
+
   const toggleForm = () => {
     setIsLogin(!isLogin);
     setErrorMessage("");
   };
-
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     setErrorMessage("");
@@ -64,14 +65,20 @@ const AuthPage = () => {
             password,
           }
         );
-
+        
         if (response.status === 200) {
-          window.localStorage.setItem("isLogin", true);
+          console.log("Logged in successfully:", response.data);
+          const userId = response.data.match(/UserId: (\d+)/)[1];                   
+          localStorage.setItem("userId", userId);
+          localStorage.setItem("isLogin", true);
+          navigate(-1);
           alert("Login Successful!");
-          navigate("/");
+         
         } else {
           throw new Error("Invalid login credentials");
         }
+        
+        
       }
     } catch (error) {
       setErrorMessage(error.message);
@@ -80,7 +87,7 @@ const AuthPage = () => {
   };
 
   const closePopup = () => {
-    navigate(-1);
+    setShowPopup(false);
     setErrorMessage("");
   };
 
@@ -90,44 +97,42 @@ const AuthPage = () => {
         <div className="popup">
           <div className="popup-inner">
             {errorMessage ? <p>{errorMessage}</p> : <p>Login successful!</p>}
-
-
+            <button className="close-btn" onClick={closePopup}>
+              Close
+            </button>
           </div>
         </div>
-        )}
+      )}
       <div className="form-container">
-        <button type= "submit" className="close-btn" onClick={closePopup}>
-          X
-        </button>
         <h2>{isLogin ? "Login" : "Sign Up"}</h2>
         <form onSubmit={handleSubmit}>
           {!isLogin && (
-              <input
-                  type="text"
-                  name="fullName"
-                  placeholder="Full Name"
-                  className="input-field"
-              />
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              className="input-field"
+            />
           )}
           <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="input-field"
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="input-field"
           />
           <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="input-field"
+            type="password"
+            name="password"
+            placeholder="Password"
+            className="input-field"
           />
           <button type="submit" className="submit-btn">
             {isLogin ? "Login" : "Sign Up"}
           </button>
           <button type="button" className="toggle-btn" onClick={toggleForm}>
             {isLogin
-                ? "Need an account? Sign Up"
-                : "Already have an account? Login"}
+              ? "Need an account? Sign Up"
+              : "Already have an account? Login"}
           </button>
         </form>
       </div>

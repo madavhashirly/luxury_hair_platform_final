@@ -1,0 +1,72 @@
+.order-review {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.order-summary,
+.shipping-address,
+.payment-method,
+.order-agreement,
+.confirmation {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.order-summary th,
+.order-summary td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.order-summary th {
+    background-color: #f2f2f2;
+}
+
+.totals {
+    font-weight: bold;
+}
+
+.shipping-address p,
+.payment-method p,
+.confirmation p {
+    margin: 0;
+}
+
+.order-agreement {
+    display: flex;
+    align-items: center;
+}
+
+.place-order-button {
+    padding: 10px 20px;
+    background-color: #101010;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.place-order-button:hover {
+    background-color: #f4a04b;
+}
+
+.confirmation {
+    text-align: center;
+}

@@ -19,7 +19,7 @@ public class Product {
     private boolean hairStock;      //available or not??
     private double hairPrice;
     @Lob
-    @Column(length = 100000)
+    @Column(length = 10485760)
     private byte[] image;
 
     protected Product() {

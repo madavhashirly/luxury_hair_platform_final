@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 h1, h2, h3 {
@@ -36,7 +36,7 @@ button, input[type="submit"] {
 }
 
 button:hover, input[type="submit"]:hover {
-    background-color: #555;
+    background-color: #cdc0c0;
 }
 
 /* Navbar Styles */
@@ -72,7 +72,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color: #ffffff;
 }
 
 /* Hero Section Styles */
@@ -99,7 +99,7 @@ nav ul li a:hover {
 }
 
 .hero-content .btn {
-    background-color: #000;
+    background-color: #ffffff;
     color: #fff;
     padding: 15px 30px;
     text-transform: uppercase;
@@ -376,3 +376,6 @@ footer p {
     padding-top: 10px;
 }
 
+/*.popup-inner{
+    text-emphasis-color: black;
+}*/

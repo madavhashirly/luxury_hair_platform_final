@@ -103,11 +103,11 @@
     background-color: #bbb;
 }
 
-.text2xl{
+.text2xl {
     font-size: 20px !important;
 }
 
-.flex{
+.flex {
     padding: 0em;
 
 }
@@ -134,4 +134,94 @@
     background-color: #c8773d;
     border-color: #ffffff;
     color: white;
+}
+
+
+
+
+
+<!-- changes-->
+
+
+
+
+
+.admin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.admin-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.product-description h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.product-description p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.product-price {
+    font-size: 24px;
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-green {
+    background-color: #000000;
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-green:hover {
+    background-color: #000000;
+}
+
+.btn-red {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-red:hover {
+    background-color: #c0392b;
 }

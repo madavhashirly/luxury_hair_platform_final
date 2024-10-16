@@ -25,13 +25,13 @@ class ProductServiceTest {
     void setUp() {
         byte[] image;
         try{
-            image = Files.readAllBytes(Paths.get("src/main/resources/images/Erika.JPG"));
+            image = Files.readAllBytes(Paths.get("src/main/resources/images/NickiBang.jpg"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        product = ProductFactory.buildProduct("Virgin", "Curly", "13 inches ",
-                 "Black", true, 3500, image);
+        product = ProductFactory.buildProduct("Peruvian", "Straight Bang", "24 inches ",
+                 "Black", true, 3000, image);
          assertNotNull(product);
         System.out.println(product);
     }

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-top-section">
         <div className="footer-feature">
           <i className="fas fa-shipping-fast"></i>{" "}
-          <h3>Fast Shipping (1-4 work day delivery)</h3>
+          <h3>Fast Shipping (5-7 work day delivery)</h3>
         </div>
         <div className="footer-feature">
           <i className="fas fa-phone-alt"></i>

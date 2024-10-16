@@ -1,10 +1,6 @@
 package za.ac.cput.controller;
 
-//import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
-//import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
-//import com.google.api.client.http.javanet.NetHttpTransport;
-//import com.google.api.client.json.gson.GsonFactory;
-//import za.ac.cput.domain.GoogleLoginRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,12 +25,21 @@ public class UserLoginController {
 
 
     @PostMapping("/read")
-    public ResponseEntity<String> loginUser(@RequestBody UserLogin loginDetails) {
+    public ResponseEntity<?> loginUser(@RequestBody UserLogin loginDetails) {
         try {
+            // Authenticate the user by checking the email and password
             boolean isAuthenticated = userLoginService.authenticateUser(loginDetails.getEmail(), loginDetails.getPassword());
 
             if (isAuthenticated) {
-                return ResponseEntity.ok("Login successful!");
+                // Retrieve the UserLogin details (including the userId) based on email
+                UserLogin user = userLoginService.findByEmail(loginDetails.getEmail());
+
+                if (user != null) {
+                    // Return the userId along with the success message
+                    return ResponseEntity.ok("Login successful! UserId: " + user.getUserId());
+                } else {
+                    return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found.");
+                }
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");
             }

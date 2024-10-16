@@ -1,2 +1,5 @@
 /luxury-hair-ui/node_modules
 /.DS_Store
+node_modules
+package-lock.json
+package.json

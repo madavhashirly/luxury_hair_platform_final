@@ -49,13 +49,6 @@
     transition: background-color 0.3s;
 }
 
-.close-btn{
-    width: 35px;
-    height: 35px;
-    margin-right: 100%;
-
-}
-
 .submit-btn:hover {
     background-color: #4c61ec;
 }

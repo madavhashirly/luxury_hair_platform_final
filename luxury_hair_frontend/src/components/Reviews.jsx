@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "../assets/style.css";
+//import "../assets/style.css";
 import "../assets/Reviews.css";
-import Navbar from "./Navbar"; // Adjust the path if necessary
-import Footer from "./Footer"; // Adjust the path if necessary
+import Navbar from "./Navbar"; 
+import Footer from "./Footer"; 
 
 const baseUrl = import.meta.env.VITE_BACK_END_URL;
 
@@ -15,7 +15,7 @@ const Reviews = () => {
 
   useEffect(() => {
     // Fetch reviews from the database
-    fetch(`${baseUrl}/reviews`)
+    fetch(`${baseUrl}/reviews/create`)
       .then((response) => response.json())
       .then((data) => setReviews(data))
       .catch((error) => console.error("Error fetching reviews:", error));
@@ -38,7 +38,7 @@ const Reviews = () => {
       image, 
     };
 
-    // Submit the new review to the database
+    
     fetch(`${baseUrl}/reviews`, {
       method: "POST",
       headers: {

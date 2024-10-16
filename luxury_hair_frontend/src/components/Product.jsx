@@ -48,17 +48,22 @@ const Product = () => {
         <div className="products-grid">
           {products.map((product) => (
             <div key={product.productId} className="product-card">
-              <img
-                src={"src/assets/" + product.image}
-                alt={product.hairStyle}
-                className="product-image"
-              />
+              {/* Convert byte array (base64) to an image */}
+              {product.image ? (
+                <img
+                  src={`data:image/jpeg;base64,${product.image}`}
+                  alt={product.hairStyle}
+                  className="product-image"
+                />
+              ) : (
+                <p>No Image Available</p>
+              )}
               <p className="product-name">{product.hairTexture}</p>
               <p className="product-name">{product.hairStyle}</p>
-              <p className="product-name">{product.hairSize}</p>
+              <p className="product-name">{product.hairSize} inches</p>
               <p className="product-name">{product.hairColor}</p>
-              <p className="product-name">{product.hairStock}</p>
-              <p className="product-price">{product.hairPrice}</p>
+              <p className="product-name"> {product.hairStock}</p>
+              <p className="product-price">Price: {product.hairPrice}</p>
               <Link to={`/product/${product.productId}`}>Purchase</Link>
             </div>
           ))}

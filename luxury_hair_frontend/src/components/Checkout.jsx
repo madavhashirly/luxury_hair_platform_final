@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../assets/style.css";
 import "../assets/checkout.css";
+import Navbar from "../components/Navbar";
+
 
 const Checkout = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [cardNumber, setCardNumber] = useState("");
@@ -18,7 +22,10 @@ const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Order placed successfully!");
-  };
+  
+  }; 
+  navigate("/orderdetails");
+ 
 
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.price, 0);

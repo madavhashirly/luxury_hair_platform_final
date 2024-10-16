@@ -8,24 +8,37 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/Payment")
+
 public class PaymentController{
+
+
     private final IPaymentService paymentService;
+
+
     @Autowired
     public PaymentController(IPaymentService paymentService) {
         this.paymentService = paymentService;
     }
+
+
     @PostMapping("/create")
     public Payment create(@RequestBody Payment payment) {
         return paymentService.create(payment);
     }
+
+
     @GetMapping("/read/{cardNumber}")
     public Payment readPayment(@PathVariable String cardNumber) {
         return paymentService.read(cardNumber);
     }
+
+
     @PutMapping("/update")
     public Payment update(@RequestBody Payment payment) {
         return paymentService.update(payment);
     }
+
+
     @GetMapping("/getall")
     public List<Payment> getAll() {
         return paymentService.getAll();
