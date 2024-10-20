@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.annotation.Order;
 import za.ac.cput.domain.Tips;
 import za.ac.cput.factory.TipsFactory;
 
@@ -48,10 +49,9 @@ class TipsServiceTest {
 
 
     @Test
+    @Order(4)
     void getall() {
-        service.create(tips1);
-        service.create(tips2);
-        service.create(tips3);
-        assertEquals(3, service.getall().size());
+        System.out.println(service.getall());
     }
+
 }

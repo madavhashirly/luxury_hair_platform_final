@@ -24,7 +24,7 @@ const Tips = () => {
 
     const fetchWashingTipImage = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/LuxuryHairVendingSystemDB/tips/get-with-image/2', {
+            const response = await axios.get('http://localhost:8080/LuxuryHairVendingSystemDB/tips/get-with-image/1', {
                 responseType: 'json'
             });
             setWashingTipImage(response.data);
@@ -36,7 +36,7 @@ const Tips = () => {
 
     const fetchCurlyImage = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/LuxuryHairVendingSystemDB/tips/get-with-image/3', {
+            const response = await axios.get('http://localhost:8080/LuxuryHairVendingSystemDB/tips/get-with-image/2', {
                 responseType: 'json'
             });
             setCurlyTipImage(response.data);
@@ -48,7 +48,7 @@ const Tips = () => {
 
     const fetchEverydayCareImage = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/LuxuryHairVendingSystemDB/tips/get-with-image/4', {
+            const response = await axios.get('http://localhost:8080/LuxuryHairVendingSystemDB/tips/get-with-image/3', {
                 responseType: 'json'
             });
             setEverydayCareImage(response.data);

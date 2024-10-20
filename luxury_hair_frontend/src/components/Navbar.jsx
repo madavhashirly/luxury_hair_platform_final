@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import {Link, NavLink, useLocation, useNavigate} from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "../assets/style.css";
 import "../assets/AuthPage.css";
 
 const Navbar = () => {
   const [cartItemsCount, setCartItemsCount] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [redirectPath,setRedirectPath ] = useState('/');
+  const [redirectPath, setRedirectPath] = useState("/");
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -26,15 +26,15 @@ const Navbar = () => {
 
     setRedirectPath(location.pathname);
   }, [location.pathname]);
+
   const Logout = () => {
     window.localStorage.removeItem("isLogin");
-    localStorage.removeItem("cart"); 
+    localStorage.removeItem("cart");
     localStorage.removeItem("userId");
     window.location.reload();
     alert("Logout Successful");
     navigate("/");
-  }
-
+  };
 
   return (
       <nav>
@@ -47,7 +47,7 @@ const Navbar = () => {
             <NavLink to="/products">Products</NavLink>
           </li>
           <li>
-            <NavLink to="/Tips">Tips</NavLink>
+            <NavLink to="/tips">Tips</NavLink>
           </li>
           <li>
             <NavLink to="/cart">
@@ -55,19 +55,23 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Reviews">Reviews</NavLink>
+            <NavLink to="/reviews">Reviews</NavLink>
+          </li>
+          <li>
+            <NavLink to="/image-upload">Image Upload</NavLink>
           </li>
 
           {isLoggedIn ? (
               <li>
-                <NavLink to="/" onClick={Logout}>Logout</NavLink>
+                <NavLink to="/" onClick={Logout}>
+                  Logout
+                </NavLink>
               </li>
           ) : (
               <li>
                 <NavLink to="/login">Login</NavLink>
               </li>
           )}
-
         </ul>
       </nav>
   );

@@ -9,7 +9,8 @@ import Reviews from "./components/Reviews";
 import Checkout from "./components/Checkout";
 import OrderDetails from "./components/OrderDetails";
 import AdminProduct from "./components/AdminProduct";
-import Tips from "./components/Tips.jsx";
+import Tips from "./components/Tips";
+import ImageUpload from "./components/ImageUpload";
 
 const App = () => {
   const login = window.localStorage.getItem("isLogin");
@@ -18,9 +19,10 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/image-upload" element={<ImageUpload />} />
           <Route path="/products" element={<Product />} />
           <Route path="/product/:id" element={<SingleProduct />} />
-          <Route path="/Tips" element={<Tips />} />
+          <Route path="/tips" element={<Tips />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/login" element={login ? <Home /> : <AuthPage />} />
